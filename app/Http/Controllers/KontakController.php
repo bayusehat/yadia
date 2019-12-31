@@ -11,7 +11,7 @@ class KontakController extends Controller
         $data = [
             'title'   => 'Kontak Kami',
             'content' => 'frontend.kontak',
-            'url'     => 'kontak',
+            'url'     => 'profil',
         ];
 
         return view('frontend.layout.index', ['data' => $data]);

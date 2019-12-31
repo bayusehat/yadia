@@ -42,22 +42,27 @@
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 							<ul class="nav navbar-nav menu_nav ml-auto">
 								<li class="nav-item @if($data['url'] == 'home') {{ 'active' }} @else {{ '' }} @endif"><a class="nav-link" href="{{ url('/') }}">Utama</a></li> 
-								<li class="nav-item @if($data['url'] == 'profil') {{ 'active' }} @else {{ '' }} @endif"><a class="nav-link" href="{{ url('/profil') }}">Profil</a></li> 
-								{{-- <li class="nav-item"><a class="nav-link" href="causes.html">Causes</a> --}}
-								{{-- <li class="nav-item submenu dropdown">
-									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                <li class="nav-item submenu dropdown @if($data['url'] == 'profil') {{ 'active' }} @else {{ '' }} @endif">
+									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profil</a>
 									<ul class="dropdown-menu">
-										<li class="nav-item"><a class="nav-link" href="events.html">Events</a>
+										<li class="nav-item"><a class="nav-link" href="{{ url('/profil') }}">Visi Misi</a>
+										<li class="nav-item"><a class="nav-link" href="event-details.html">Event Details</a>
+										<li class="nav-item"><a class="nav-link" href="{{ url('/kontak') }}">Kontak</a></li>
+									</ul>
+                                </li>  
+								{{-- <li class="nav-item"><a class="nav-link" href="causes.html">Program</a> --}}
+								<li class="nav-item submenu dropdown @if($data['url'] == 'program') {{ 'active' }} @else {{ '' }} @endif">
+									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Program</a>
+									<ul class="dropdown-menu">
+										<li class="nav-item"><a class="nav-link" href="{{ url('/program') }}">Wakaf Tanahs</a>
 										<li class="nav-item"><a class="nav-link" href="event-details.html">Event Details</a>
 										<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
 									</ul>
-                                </li>  --}}
-                                <li class="nav-item @if($data['url'] == 'program') {{ 'active' }} @else {{ '' }} @endif"><a class="nav-link" href="{{ url('/program') }}">Program</a></li>
+                                </li> 
                                 <li class="nav-item @if($data['url'] == 'gallery') {{ 'active' }} @else {{ '' }} @endif"><a class="nav-link" href="{{ url('/gallery') }}">Gallery</a></li>
 								<li class="nav-item @if($data['url'] == 'laporan') {{ 'active' }} @else {{ '' }} @endif">
 									<a href="{{ url('/laporan') }}" class="nav-link">Laporan Keuangan</a>
 								</li> 
-								<li class="nav-item @if($data['url'] == 'kontak') {{ 'active' }} @else {{ '' }} @endif"><a class="nav-link" href="{{ url('/kontak') }}">Kontak</a></li>
 							</ul>
 						</div> 
 					</div>
