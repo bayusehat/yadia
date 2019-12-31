@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class GalleryController extends Controller
 {
     public function index()
     {
         $data = [
-            'title' => 'Home',
-            'content' => 'frontend.home',
-            'url' => 'home',
+            'title'   => 'Gallery',
+            'content' => 'frontend.gallery',
+            'url'     => 'gallery',
         ];
 
         return view('frontend.layout.index', ['data' => $data]);

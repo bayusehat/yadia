@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class KontakController extends Controller
 {
     public function index()
     {
         $data = [
-            'title' => 'Home',
-            'content' => 'frontend.home',
-            'url' => 'home',
+            'title'   => 'Kontak Kami',
+            'content' => 'frontend.kontak',
+            'url'     => 'kontak',
         ];
 
         return view('frontend.layout.index', ['data' => $data]);

@@ -87,5 +87,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </div>
 </footer>
 <!--================ End footer Area  =================-->
+        <script src="{{ asset('assets/js/stellar.js') }}"></script>
+        <script src="{{ asset('assets/vendors/lightbox/simpleLightbox.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/nice-select/js/jquery.nice-select.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.ajaxchimp.min.js') }}"></script>
+        <script src="{{ asset('assets/js/mail-script.js') }}"></script>
+        <script src="{{ asset('assets/js/countdown.js') }}"></script>
+        <!--gmaps Js-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+        <script src="{{ asset('assets/js/gmaps.min.js') }}"></script>
+        <script src="{{ asset('assets/js/theme.js') }}"></script>
 </body>
 </html>
