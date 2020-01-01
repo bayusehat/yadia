@@ -1,7 +1,7 @@
 @php
   use App\Menu;
 
-  $menuParent = Menu::where('menuParent',0)->get();
+  $menuParent = Menu::where('menuParent',0)->orderBy('menuName','asc')->get();
 @endphp
 <body id="page-top">
 
@@ -83,7 +83,7 @@
               <span>{{ $mp->menuName }}</span>
             </a>
             @php
-                $subMenu = Menu::where('menuParent',$mp->menuId)->get();
+                $subMenu = Menu::where('menuParent',$mp->menuId)->orderBy('menuName','asc')->get();
             @endphp
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
               @foreach ($subMenu as $sm)

@@ -43,5 +43,13 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('admin/edit/{id}','Admin\AdminController@edit');
         Route::post('admin/update/{id}','Admin\AdminController@update');
         Route::get('admin/delete/{id}','Admin\AdminController@delete');
+
+        //Menu
+        Route::get('menu','Admin\MenuController@index');
+        Route::get('menu/load','Admin\MenuController@loadData');
+        Route::post('menu/insert','Admin\MenuController@insert');
+        Route::get('menu/edit/{id}','Admin\MenuController@edit');
+        Route::post('menu/update/{id}','Admin\MenuController@update');
+        Route::get('menu/delete/{id}','Admin\MenuController@destroy');
     });
 });
