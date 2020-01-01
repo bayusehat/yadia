@@ -51,5 +51,14 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('menu/edit/{id}','Admin\MenuController@edit');
         Route::post('menu/update/{id}','Admin\MenuController@update');
         Route::get('menu/delete/{id}','Admin\MenuController@destroy');
+
+        //Gallery
+        Route::get('gallery','Admin\GalleryController@index');
+        Route::get('gallery/load','Admin\GalleryController@loadData');
+        Route::get('gallery/create','Admin\GalleryController@create');
+        Route::post('gallery/insert','Admin\GalleryController@insert');
+        Route::get('gallery/edit/{id}','Admin\GalleryController@edit');
+        Route::post('gallery/update/{id}','Admin\GalleryController@update');
+        Route::get('gallery/delete/{id}','Admin\GalleryController@destroy');
     });
 });
