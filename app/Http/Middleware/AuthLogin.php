@@ -16,7 +16,7 @@ class AuthLogin
     public function handle($request, Closure $next)
     {
         if(!session('token') || empty(session('token'))){
-            return redirect('login');
+            return redirect('admin/login');
         }
         return $next($request);
     }

@@ -25,14 +25,14 @@
             @csrf
           <div class="form-group">
             <div class="form-label-group">
-              <input type="text" id="adminUsername" class="form-control" placeholder="Username" autofocus="autofocus">
+              <input type="text" name="adminUsername" id="adminUsername" class="form-control" placeholder="Username" autofocus="autofocus">
               <label for="adminUsername">Username</label>
               @error('adminUsername') <small class="text-danger">{{ $message }}</small> @enderror
             </div>
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="password" id="adminPassword" class="form-control" placeholder="Password">
+              <input type="password" name="adminPassword" id="adminPassword" class="form-control" placeholder="Password">
               <label for="adminPassword">Password</label>
               @error('adminPassword') <small class="text-danger">{{ $message }}</small> @enderror
             </div>

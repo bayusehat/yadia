@@ -27,5 +27,21 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['middleware' => ['authLogin']], function () {
         Route::get('/dashboard','Admin\DashboardController@index');
+
+        //Role
+        Route::get('role','Admin\RoleController@index');
+        Route::get('role/load','Admin\RoleController@loadData');
+        Route::post('role/insert','Admin\RoleController@insert');
+        Route::get('role/edit/{id}','Admin\RoleController@edit');
+        Route::post('role/update/{id}','Admin\RoleController@update');
+        Route::get('role/delete/{id}','Admin\RoleController@destroy');
+
+        //Admin
+        Route::get('admin','Admin\AdminController@index');
+        Route::get('admin/load','Admin\AdminController@loadData');
+        Route::post('admin/insert','Admin\AdminController@insert');
+        Route::get('admin/edit/{id}','Admin\AdminController@edit');
+        Route::post('admin/update/{id}','Admin\AdminController@update');
+        Route::get('admin/delete/{id}','Admin\AdminController@delete');
     });
 });

@@ -43,7 +43,7 @@ class AuthController extends Controller
                            'roleId' => $data->roleId
                        ]);
 
-                       return redirect('/dashboard');
+                       return redirect('admin/dashboard');
                    }else{
                        return redirect()->back()->with('error','Password yang anda masukan salah!');
                    }
@@ -63,6 +63,6 @@ class AuthController extends Controller
         ]);
 
         session()->flush();
-        return redirect('/login');
+        return redirect('admin/login');
     }
 }

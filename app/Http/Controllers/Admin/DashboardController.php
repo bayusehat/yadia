@@ -16,7 +16,7 @@ class DashboardController extends Controller
         $data = [
             'title'   => 'Dashboard YADIA Admin',
             'content' => 'admin.dashboard',
-            'url'     => 'dashboard',
+            'parentActive' => 'dashboard',
         ];
 
         return view('admin.layout.index',['data' => $data]);
