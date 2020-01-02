@@ -69,5 +69,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('profil/edit/{id}','Admin\ProfilController@edit');
         Route::post('profil/update/{id}','Admin\ProfilController@update');
         Route::get('profil/delete/{id}','Admin\ProfilController@destroy');
+
+        //Donasi
+        Route::get('donasi','Admin\DonasiController@index');
+        Route::post('donasi/insert','Admin\DonasiController@insert');
+        Route::post('donasi/update/{id}','Admin\DonasiController@update');
     });
 });

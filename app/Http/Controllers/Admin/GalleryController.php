@@ -38,7 +38,7 @@ class GalleryController extends Controller
                 $file,
                 date('d/m/y H:i', strtotime($v->galleryCreate)),
                 '
-                <a href="'.url('admin/gallery/edit/'.$v->galleryId).'" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</a>
+                <a href="'.url('admin/gallery/edit/'.$v->galleryId).'" target="_blank" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</a>
                 <button type="button" onclick="deleteData('.$v->galleryId.')" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                 '
             ];

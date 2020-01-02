@@ -9,7 +9,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-
+  <link rel="icon" href="{{ asset('assets/img/logo YDIA.png') }}" type="image/png">
+  
   <title>{{ $data['title'] }}</title>
 
   <!-- Custom fonts for this template-->
