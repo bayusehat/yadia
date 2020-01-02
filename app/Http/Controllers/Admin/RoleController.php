@@ -18,6 +18,7 @@ class RoleController extends Controller
             'title' => 'Data Role',
             'content' => 'admin.pengaturan.role',
             'parentActive' => 'pengaturan',
+            'urlActive' => 'role'
         ];
 
         return view('admin.layout.index',['data' =>$data]);

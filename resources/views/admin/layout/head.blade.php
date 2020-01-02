@@ -31,5 +31,15 @@
   <script src="{{ asset('assets/admin/vendor/chart.js/Chart.min.js') }}"></script>
   <script src="{{ asset('assets/admin/vendor/datatables/jquery.dataTables.js') }}"></script>
   <script src="{{ asset('assets/admin/vendor/datatables/dataTables.bootstrap4.js') }}"></script>
-
+  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script>
+    tinymce.init({
+      selector: 'textarea'
+    });
+  </script>
+  <style>
+    .btn-warning{
+      color: white;
+    }
+  </style>
 </head>

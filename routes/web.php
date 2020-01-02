@@ -12,7 +12,7 @@
 */
 //Frontend
 Route::get('/','HomeController@index');
-Route::get('/profil','AboutController@index');
+Route::get('/profil/{slug}','ProfilController@index');
 Route::get('/program','ProgramController@index');
 Route::get('/gallery','GalleryController@index');
 Route::get('/laporan','LaporanController@index');
@@ -60,5 +60,14 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('gallery/edit/{id}','Admin\GalleryController@edit');
         Route::post('gallery/update/{id}','Admin\GalleryController@update');
         Route::get('gallery/delete/{id}','Admin\GalleryController@destroy');
+
+        //Profil
+        Route::get('profil','Admin\ProfilController@index');
+        Route::get('profil/load','Admin\ProfilController@loadData');
+        Route::get('profil/create','Admin\ProfilController@create');
+        Route::post('profil/insert','Admin\ProfilController@insert');
+        Route::get('profil/edit/{id}','Admin\ProfilController@edit');
+        Route::post('profil/update/{id}','Admin\ProfilController@update');
+        Route::get('profil/delete/{id}','Admin\ProfilController@destroy');
     });
 });

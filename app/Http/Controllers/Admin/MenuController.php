@@ -19,6 +19,7 @@ class MenuController extends Controller
             'title' => 'Data Menu',
             'content' => 'admin.pengaturan.menu',
             'parentActive' => 'pengaturan',
+            'urlActive' => 'menu',
             'parent' => Menu::where('menuParent',0)->get()
         ];
 

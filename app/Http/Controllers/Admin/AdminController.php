@@ -18,6 +18,7 @@ class AdminController extends Controller
             'title' => 'Data Admin',
             'content' => 'admin.pengaturan.admin',
             'parentActive' => 'pengaturan',
+            'urlActive' => 'admin',
             'role' => Role::all()
         ];
 

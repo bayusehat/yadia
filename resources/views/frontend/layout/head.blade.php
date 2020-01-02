@@ -5,8 +5,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link rel="icon" href="img/favicon.png" type="image/png">
-        <title>Yadia | {{ $data['title'] }}</title>
+        <link rel="icon" href="{{ asset('assets/img/logo YDIA.png') }}" type="image/png">
+        <title>Yayasan Dakwah Islam | {{ $data['title'] }}</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/vendors/linericon/style.css') }}">
@@ -24,7 +24,11 @@
         <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     </head>
 <body>
-        
+    @php
+		use App\Profil;
+
+		$profil = Profil::all();
+	@endphp
 	<!--================ Start Header Menu Area =================-->
 	<header class="header_area">
 		<div class="main_menu">
@@ -32,7 +36,7 @@
 				<nav class="navbar navbar-expand-lg navbar-light">
 					<div class="container">
 						<!-- Brand and toggle get grouped for better mobile display -->
-						<a class="navbar-brand logo_h" href="index.html"><img src="{{ asset('assets/img/logo.png') }}" alt=""></a>
+						<a class="navbar-brand logo_h text-white" href="{{ url('/') }}"><img src="{{ asset('assets/img/logo YDIA.png') }}" alt="" style="width:30px;margin-right:5px"> Yayasan Dakwah Islam</a>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -45,9 +49,9 @@
                                 <li class="nav-item submenu dropdown @if($data['url'] == 'profil') {{ 'active' }} @else {{ '' }} @endif">
 									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profil</a>
 									<ul class="dropdown-menu">
-										<li class="nav-item"><a class="nav-link" href="{{ url('/profil') }}">Visi Misi</a>
-										<li class="nav-item"><a class="nav-link" href="event-details.html">Event Details</a>
-										<li class="nav-item"><a class="nav-link" href="{{ url('/kontak') }}">Kontak</a></li>
+										@foreach ($profil as $p)
+											<li class="nav-item"><a class="nav-link" href="{{ url('/profil/'.$p->profilSlug) }}">{{ $p->profilName }}</a>	
+										@endforeach
 									</ul>
                                 </li>  
 								{{-- <li class="nav-item"><a class="nav-link" href="causes.html">Program</a> --}}

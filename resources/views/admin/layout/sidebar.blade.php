@@ -77,7 +77,7 @@
           </a>
         </li>
         @foreach ($menuParent as $mp)
-            <li class="nav-item dropdown @if($data['parentActive'] == $mp->menuParentActive) {{ 'active' }} @else {{ '' }} @endif">
+            <li class="nav-item dropdown @if($data['parentActive'] == $mp->menuParentActive) {{ 'active show' }} @else {{ '' }} @endif">
             <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="@if($data['parentActive'] == $mp->menuParentActive) {{ 'true' }} @else {{ 'false' }} @endif">
               <i class="{{ $mp->menuIcon }} fa-fw"></i>
               <span>{{ $mp->menuName }}</span>
@@ -85,9 +85,9 @@
             @php
                 $subMenu = Menu::where('menuParent',$mp->menuId)->orderBy('menuName','asc')->get();
             @endphp
-            <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+            <div class="dropdown-menu @if($data['parentActive'] == $mp->menuParentActive) {{ 'show' }} @else {{ '' }} @endif" aria-labelledby="pagesDropdown">
               @foreach ($subMenu as $sm)
-                  <a class="dropdown-item" href="{{ url($sm->menuUrl) }}">{{ $sm->menuName }}</a>
+                  <a class="dropdown-item @if($data['urlActive'] == $sm->menuUrlActive) {{ 'active' }} @else {{ '' }} @endif" href="{{ url($sm->menuUrl) }}">{{ $sm->menuName }}</a>
               @endforeach
               
             </div>
