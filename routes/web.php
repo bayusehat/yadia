@@ -42,7 +42,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('admin/insert','Admin\AdminController@insert');
         Route::get('admin/edit/{id}','Admin\AdminController@edit');
         Route::post('admin/update/{id}','Admin\AdminController@update');
-        Route::get('admin/delete/{id}','Admin\AdminController@delete');
+        Route::get('admin/delete/{id}','Admin\AdminController@destroy');
 
         //Menu
         Route::get('menu','Admin\MenuController@index');
@@ -74,5 +74,9 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('donasi','Admin\DonasiController@index');
         Route::post('donasi/insert','Admin\DonasiController@insert');
         Route::post('donasi/update/{id}','Admin\DonasiController@update');
+
+        //Setting
+        Route::get('change/password','Admin\SettingController@index');
+        Route::post('change/password/update','Admin\SettingController@update');
     });
 });

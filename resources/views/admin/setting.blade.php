@@ -17,34 +17,32 @@
 
             @if(session('error'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <strong>Gagal!</strong> {{ Session::get('error')}}
+                    <strong>Sukses!</strong> {{ Session::get('error')}}
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
             @endif
-            <form action="{{ url('admin/profil/update/'.$profil->profilId) }}" method="POST" enctype="multipart/form-data">
+           
+            <form action="{{ url('admin/change/password/update') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xl-12">
                         <div class="form-group">
-                            <label for="profilName">Nama Profil</label>
-                            <input type="text" class="form-control" name="profilName" id="profilName" value="{{ $profil->profilName }}">
-                            @error('profilName') <small class="text-danger">{{ $message }}</small> @enderror
+                            <label for="profilName">Password Baru :</label>
+                            <input type="password" class="form-control" name="adminPasswordNew" id="adminPasswordNew">
+                            @error('adminPasswordNew') <small class="text-danger">{{ $message }}</small> @enderror
                         </div>
                         <div class="form-group">
-                            <label for="profilContent">Konten Profil</label>
-                            <textarea name="profilContent" id="konten" cols="30" rows="10">{{ $profil->profilContent }}</textarea>
-                            @error('profilContent') <small class="text-danger">{{ $message }}</small> @enderror
+                            <label for="profilName">Ulangi Password :</label>
+                            <input type="password" class="form-control" name="adminPasswordConfirm" id="adminPasswordConfirm">
+                            @error('adminPasswordConfirm') <small class="text-danger">{{ $message }}</small> @enderror
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 col-sm-12 col-xl-6">
+                    <div class="col-md-12 col-sm-12 col-xl-12">
                         <button type="submit" class="btn btn-warning btn-block"><i class="fas fa-edit"></i> Update</button>
-                    </div>
-                    <div class="col-md-6 col-sm-12 col-xl-6">
-                        <a href="{{ url('admin/profil') }}" class="btn btn-danger btn-block"><i class="fas fa-arrow-left"></i> Kembali</a>
                     </div>
                 </div>
             </form>

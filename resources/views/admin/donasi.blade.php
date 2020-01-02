@@ -32,7 +32,7 @@
 
             @if(session('error'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <strong>Sukses!</strong> {{ Session::get('error')}}
+                    <strong>Gagal!</strong> {{ Session::get('error')}}
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -40,7 +40,7 @@
             @endif
             <div class="alert alert-primary">
                 <p class="alert-heading"> Donasi Terkini :</p>
-                    <h4>Rp {{ number_format($val) }}</h4> 
+                    <h3>Rp {{ number_format($val) }}</h3> 
                 <hr>
                 <small class="text-danger text-right"><i>Diperbarui pada {{ $tgl }}</i></small>
             </div>
