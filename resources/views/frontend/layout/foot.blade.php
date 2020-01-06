@@ -1,30 +1,32 @@
-<!--================ Start footer Area  =================-->	
+<!--================ Start footer Area  =================-->
+@php
+    use App\Config;
+    use App\Gallery;
+
+    $config = Config::orderBy('configId','asc')->first();
+    $gallery = Gallery::limit(4)->get();
+
+    $office = explode(',',$config->configAddress);
+    $phone  = explode(',',$config->configTelephone);
+    $email  = explode(',',$config->configEmail);
+@endphp	
 <footer>
     <div class="footer-area">
         <div class="container">
             <div class="row section_gap">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-footer-widget tp_widgets">
-                        <h4 class="footer_title large_title">Our Mission</h4>
-                        <p>
-                            So seed seed green that winged cattle in. Gathering thing made fly you're no 
-                            divided deep moved us lan Gathering thing us land years living.
-                        </p>
-                        <p>
-                            So seed seed green that winged cattle in. Gathering thing made fly you're no divided deep moved 
-                        </p>
+                        <h4 class="footer_title large_title">Tujuan</h4>
+                        {!! $config->configMission !!}
                     </div>
                 </div>
                 <div class="offset-lg-1 col-lg-2 col-md-6 col-sm-6">
                     <div class="single-footer-widget tp_widgets">
-                        <h4 class="footer_title">Quick Links</h4>
+                        <h4 class="footer_title">Pintasan</h4>
                         <ul class="list">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Causes</a></li>
-                            <li><a href="#">Event</a></li>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="{{ url('/') }}">Utama</a></li>
+                            <li><a href="{{ url('/gallery') }}">Gallery</a></li>
+                            <li><a href="{{ url('/donasi') }}">Donasi</a></li>
                         </ul>
                     </div>
                 </div>
@@ -32,42 +34,34 @@
                     <div class="single-footer-widget instafeed">
                         <h4 class="footer_title">Gallery</h6>
                         <ul class="list instafeed d-flex flex-wrap">
-                            <li><img src="img/gallery/g1.jpg" alt=""></li>
-                            <li><img src="img/gallery/g2.jpg" alt=""></li>
-                            <li><img src="img/gallery/g3.jpg" alt=""></li>
-                            <li><img src="img/gallery/g4.jpg" alt=""></li>
-                            <li><img src="img/gallery/g5.jpg" alt=""></li>
-                            <li><img src="img/gallery/g6.jpg" alt=""></li>
+                           <li><a href="{{ url('/galeri') }}"><i class="fa fa-arrow-right"></i> Lihat semua galeri</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="offset-lg-1 col-lg-3 col-md-6 col-sm-6">
                     <div class="single-footer-widget tp_widgets">
-                        <h4 class="footer_title">Contact Us</h4>
+                        <h4 class="footer_title">Kontak Kami</h4>
                         <div class="ml-40">
                             <p class="sm-head">
                                 <span class="fa fa-location-arrow"></span>
-                                Head Office
+                                Kantor
                             </p>
-                            <p>123, Main Street, Your City</p>
-
+                            <p>{{ $config->configAddress }}</p>
                             <p class="sm-head">
                                 <span class="fa fa-phone"></span>
                                 Phone Number
                             </p>
-                            <p>
-                                +123 456 7890 <br>
-                                +123 456 7890
-                            </p>
+                            @for($p = 0;$p < count($phone);$p++)
+                                <p>{{ $phone[$p] }} <br></p>
+                            @endfor
 
                             <p class="sm-head">
                                 <span class="fa fa-envelope"></span>
                                 Email
                             </p>
-                            <p>
-                                free@infoexample.com <br>
-                                www.infoexample.com
-                            </p>
+                            @for($e = 0;$e < count($email);$e++)
+                                <p>{{ $email[$e] }} <br></p>
+                            @endfor
                         </div>
                     </div>
                 </div>
@@ -80,8 +74,8 @@
             <div class="row d-flex">
                 <p class="col-lg-12 footer-text text-center">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | yadia.org by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
             </div>
         </div>
     </div>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Validator;
 use Hash;
 use Str;
+use DB;
 use App\Admin;
 use App\Role;
 use App\Donasi;
@@ -15,12 +16,14 @@ class DonasiController extends Controller
 {
     public function index()
     {
+        $totalDonasi = Donasi::select(DB::raw('sum(donasiValue) as value'))->get();
         $data = [
             'title' => 'Halaman Donasi',
             'content' => 'admin.donasi',
             'parentActive' => 'fitur',
             'urlActive' => 'donasi',
-            'donasi' => Donasi::all()
+            'totalDonasi' => $totalDonasi,
+            'donasi' => Donasi::orderBy('donasiId','desc')->first()
         ];
 
         return view('admin.layout.index',['data' => $data]);
@@ -29,6 +32,7 @@ class DonasiController extends Controller
     public function insert(Request $request)
     {
         $rules = [
+            'donasiName' => 'required',
             'donasiValue' => 'required|numeric',
         ];
 
@@ -39,6 +43,7 @@ class DonasiController extends Controller
         }else{
             $insert = Donasi::insert([
                 'adminId' => session('adminId'),
+                'donasiName' => $request->input('donasiName'),
                 'donasiValue' => $request->input('donasiValue'),
                 'donasiCreate' => date('Y-m-d H:i:s'),
                 'donasiUpdate' => date('Y-m-d H:i:s')

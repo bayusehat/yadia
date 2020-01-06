@@ -14,8 +14,8 @@
 Route::get('/','HomeController@index');
 Route::get('/profil/{slug}','ProfilController@index');
 Route::get('/program','ProgramController@index');
-Route::get('/gallery','GalleryController@index');
-Route::get('/laporan','LaporanController@index');
+Route::get('/galeri','GalleryController@index');
+Route::get('/donasi','LaporanController@index');
 Route::get('/kontak','KontakController@index');
 
 
@@ -78,5 +78,18 @@ Route::group(['prefix' => 'admin'], function () {
         //Setting
         Route::get('change/password','Admin\SettingController@index');
         Route::post('change/password/update','Admin\SettingController@update');
+
+        //Config
+        Route::get('config','Admin\ConfigController@index');
+        Route::post('config/act','Admin\ConfigController@insert');
+
+        //Program Utama
+        Route::get('progutama','Admin\ProgramUtamaController@index');
+        Route::get('progutama/load','Admin\ProgramUtamaController@loadData');
+        Route::get('progutama/create','Admin\ProgramUtamaController@create');
+        Route::post('progutama/insert','Admin\ProgramUtamaController@insert');
+        Route::get('progutama/edit/{id}','Admin\ProgramUtamaController@edit');
+        Route::post('progutama/update/{id}','Admin\ProgramUtamaController@update');
+        Route::get('progutama/delete/{id}','Admin\ProgramUtamaController@destroy');
     });
 });

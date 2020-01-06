@@ -15,13 +15,30 @@
         <link rel="stylesheet" href="{{ asset('assets/vendors/nice-select/css/nice-select.css') }}">
         <!-- main css -->
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+		<link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+		<link rel="stylesheet" href="{{ asset('assets/css/gallery.css') }}">
          
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="{{ asset('assets/js/jquery-3.2.1.min.js') }}"></script>
         <script src="{{ asset('assets/js/popper.js') }}"></script>
-        <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+		<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+		<style>
+			@media (max-width: 1199px){
+			.donasi_area .donasi_right {
+					padding: 50px 30px;
+				}
+			}
+			.donasi_area .donasi_right {
+				padding: 110px 60px;
+				background: #ffffff;
+				margin-top: 70px;
+				margin-left: -40px;
+				width: 100%;
+				z-index: 2;
+				box-shadow: 0px 5px 40px rgba(153, 153, 153, 0.2);
+			}
+		</style>
     </head>
 <body>
     @php
@@ -55,17 +72,10 @@
 									</ul>
                                 </li>  
 								{{-- <li class="nav-item"><a class="nav-link" href="causes.html">Program</a> --}}
-								<li class="nav-item submenu dropdown @if($data['url'] == 'program') {{ 'active' }} @else {{ '' }} @endif">
-									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Program</a>
-									<ul class="dropdown-menu">
-										<li class="nav-item"><a class="nav-link" href="{{ url('/program') }}">Wakaf Tanahs</a>
-										<li class="nav-item"><a class="nav-link" href="event-details.html">Event Details</a>
-										<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-									</ul>
-                                </li> 
-                                <li class="nav-item @if($data['url'] == 'gallery') {{ 'active' }} @else {{ '' }} @endif"><a class="nav-link" href="{{ url('/gallery') }}">Gallery</a></li>
-								<li class="nav-item @if($data['url'] == 'laporan') {{ 'active' }} @else {{ '' }} @endif">
-									<a href="{{ url('/laporan') }}" class="nav-link">Laporan Keuangan</a>
+								<li class="nav-item @if($data['url'] == 'program') {{ 'active' }} @else {{ '' }} @endif"><a class="nav-link" href="{{ url('/program') }}">Program</a></li> 
+                                <li class="nav-item @if($data['url'] == 'gallery') {{ 'active' }} @else {{ '' }} @endif"><a class="nav-link" href="{{ url('/galeri') }}">Galeri</a></li>
+								<li class="nav-item @if($data['url'] == 'donasi') {{ 'active' }} @else {{ '' }} @endif">
+									<a href="{{ url('/donasi') }}" class="nav-link">Donasi</a>
 								</li> 
 							</ul>
 						</div> 

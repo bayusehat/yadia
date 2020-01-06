@@ -4,8 +4,8 @@
         <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
         <div class="container">
             <div class="banner_content text-center">
-                <h2>{{ $profil->profilName }}</h2>
-                <p>Platea nullam nostra laoreet potenti hendrerit laoreet enim nisl</p>
+                <h2>{{ $title }}</h2>
+                <p>Donasi untuk kegiatan Yayasan Dakwah Islam</p>
             </div>
         </div>
     </div>
@@ -13,32 +13,35 @@
 <!--================ End Home Banner Area =================-->
 
 <!--================ Start About Us Area =================-->
-<section class="about_area section_gap">
+<section class="donasi_area section_gap">
     <div class="container">
         <div class="row">	
-            <div class="single_about row">
+            {{-- <div class="single_about row"> --}}
                 {{-- <div class="col-lg-6 col-md-12 text-center about_left">
                     <div class="about_thumb">
                         <img src="img/about-img.jpg" class="img-fluid" alt="">
                     </div>
                 </div> --}}
-                <div class="col-lg-12 col-md-12 about_right">
-                    <div class="about_content">
-                        <h2>
-                           {{ $profil->profilName }}
-                        </h2>
-                        {!! $profil->profilContent !!}
-                        {{-- <a href="#" class="primary_btn">Learn more</a> --}}
+                <div class="col-lg-12 col-md-12 col-sm-12 donasi_right">
+                    <div class="about_content text-center">
+                        <h4>
+                            Donasi terkumpul saat ini : 
+                        </h4>
+                        <h1 style="font-size:100px">
+                            Rp {{ number_format($totalDonasi[0]->value)}}
+                        </h1>
+                        <hr>
+                        <p class="text-danger"><i>Terakhir diperbarui pada {{ date('d F Y, H:i', strtotime($donasi->donasiUpdate)) }}</i></p>
                     </div>
                 </div>
-            </div>
+            {{-- </div> --}}
         </div>
     </div>
 </section>
 <!--================ End About Us Area =================-->
 
 <!--================Team Area =================-->
-{{-- <section class="team_area section_gap">
+<section class="team_area section_gap">
     <div class="container">
         <div class="main_title">
             <h2>Meet our voluteer</h2>
@@ -130,7 +133,7 @@
             </div>
         </div>
     </div>
-</section> --}}
+</section>
 <!--================End Team Area =================-->
 
 <!--================ Start CTA Area =================-->
