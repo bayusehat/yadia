@@ -12,14 +12,14 @@
 
 <section class="mb-3">
     <div class="container">
-        <div class="row-gallery">
+        <div class="row-gallery" id="thumbnails">
             @foreach ($gallery as $g)
-                <div class="col-md-3 col-sm-12 col-xl-3 column">
+                <a class="col-md-3 col-sm-12 col-xl-3 column" href="{{ asset('gallery/'.$g->galleryfile) }}">
                     <div class="container-image">
                         <img class="image" src="{{ asset('gallery/'.$g->galleryfile) }}" alt="{{ $g->galleryTitle }}">
                         <div class="overlay">{{ $g->galleryTitle }}</div>
                     </div>
-                </div>
+                </a>
             @endforeach
         </div>
     </div>

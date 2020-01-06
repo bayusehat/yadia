@@ -25,7 +25,8 @@
                         <h4 class="footer_title">Pintasan</h4>
                         <ul class="list">
                             <li><a href="{{ url('/') }}">Utama</a></li>
-                            <li><a href="{{ url('/gallery') }}">Gallery</a></li>
+                            <li><a href="{{ url('/program') }}">Program</a></li>
+                            <li><a href="{{ url('/galeri') }}">Galeri</a></li>
                             <li><a href="{{ url('/donasi') }}">Donasi</a></li>
                         </ul>
                     </div>

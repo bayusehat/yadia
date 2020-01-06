@@ -91,5 +91,22 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('progutama/edit/{id}','Admin\ProgramUtamaController@edit');
         Route::post('progutama/update/{id}','Admin\ProgramUtamaController@update');
         Route::get('progutama/delete/{id}','Admin\ProgramUtamaController@destroy');
+
+        //News Category
+        Route::get('category','Admin\NewsCategoryController@index');
+        Route::get('category/load','Admin\NewsCategoryController@loadData');
+        Route::post('category/insert','Admin\NewsCategoryController@insert');
+        Route::get('category/edit/{id}','Admin\NewsCategoryController@edit');
+        Route::post('category/update/{id}','Admin\NewsCategoryController@update');
+        Route::get('category/delete/{id}','Admin\NewsCategoryController@destroy');
+
+        //News
+        Route::get('news','Admin\NewsController@index');
+        Route::get('news/load','Admin\NewsController@loadData');
+        Route::get('news/create','Admin\NewsController@create');
+        Route::post('news/insert','Admin\NewsController@insert');
+        Route::get('news/edit/{id}','Admin\NewsController@edit');
+        Route::post('news/update/{id}','Admin\NewsController@update');
+        Route::get('news/delete/{id}','Admin\NewsController@destroy');
     });
 });

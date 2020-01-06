@@ -9,8 +9,8 @@
 						That don't lights. Blessed land spirit creature divide our made two 
 						itself upon you'll dominion waters man second good you they're divided upon winged were replenish night
 					</p>
-					<a class="primary_btn mr-20" href="#">Donasi Sekarang</a>
-					<a class="primary_btn yellow_btn text-white" href="{{ url('/') }}">Program Kami</a>
+					<a class="primary_btn mr-20" href="{{ url('/program') }}">Donasi Sekarang</a>
+					<a class="primary_btn yellow_btn text-white" href="{{ url('/galeri') }}">Galeri</a>
 				</div>
 			</div>
 		</div>
@@ -27,10 +27,10 @@
 			<div class="row">
 				<div class="col-lg-4 col-md-6">
 					<div class="single_causes">
-						<h4>Menggalang Donasi</h4>
+						<h4>Menggalang Dana</h4>
 						<img src="{{ asset('assets/img/causes/c1.png') }}" alt="">
 						<p>
-							It you're. Was called you're fowl grass lesser land together waters beast darkness earth land whose male all moveth fruitful.
+							Menggalang dana untuk mereka yang mebutuhkan
 						</p>
 					</div>
 				</div>
@@ -39,7 +39,7 @@
 						<h4>Memberikan Inspirasi</h4>
 						<img src="{{ asset('assets/img/causes/c2.png') }}" alt="">
 						<p>
-							It you're. Was called you're fowl grass lesser land together waters beast darkness earth land whose male all moveth fruitful.
+							Memberikan inspirasi bagi semua agar selalu termotivasi dan semangat dalam menajalani hidup
 						</p>
 					</div>
 				</div>
@@ -48,7 +48,7 @@
 						<h4>Menjadi Donatur</h4>
 						<img src="{{ asset('assets/img/causes/c3.png') }}" alt="">
 						<p>
-							It you're. Was called you're fowl grass lesser land together waters beast darkness earth land whose male all moveth fruitful.
+							Menjadi donatur untuk kemanusiaan
 						</p>
 					</div>
 				</div>
@@ -450,7 +450,7 @@
 	<!--================End Team Area =================-->
 
 	<!--================ Start CTA Area =================-->
-	<div class="cta-area section_gap overlay">
+	{{-- <div class="cta-area section_gap overlay">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-7">
@@ -463,7 +463,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<!--================ End CTA Area =================-->
 
 	<!--================ Start Story Area =================-->
@@ -481,85 +481,32 @@
 			</div>
 			<div class="row">
 				<!-- single-story -->
-				<div class="col-lg-4 col-md-6">
-					<div class="single-story">
-						<div class="story-thumb">
-							<img class="img-fluid" src="{{ asset('assets/img/story/s1.jpg') }}" alt="">
-						</div>
-						<div class="story-details">
-							<div class="story-meta">
-								<a href="#">
-									<span class="lnr lnr-calendar-full"></span>
-									20th Sep, 2018
-								</a>
-								<a href="#">
-									<span class="lnr lnr-book"></span>
-									Company
-								</a>
+				@foreach ($news as $n)
+					<div class="col-lg-4 col-md-6">
+						<div class="single-story">
+							<div class="story-thumb">
+								<img class="img-fluid" src="{{ asset('news/'.$n->newsThumbnail) }}" alt="{{ $n->newsTitle }}">
 							</div>
-							<h5>
-								<a href="#">
-									Lime recalls electric scooters over 
-									battery fire.
-								</a>
-							</h5>
+							<div class="story-details">
+								<div class="story-meta">
+									<a href="#">
+										<span class="lnr lnr-calendar-full"></span>
+										{{ date('d F, Y',strtotime($n->newsCreate)) }}
+									</a>
+									<a href="#">
+										<span class="lnr lnr-book"></span>
+										{{ $n->newsCategoryName }}
+									</a>
+								</div>
+								<h5>
+									<a href="#">
+										{{ $n->newsTitle }}
+									</a>
+								</h5>
+							</div>
 						</div>
 					</div>
-				</div>
-
-				<!-- single-story -->
-				<div class="col-lg-4 col-md-6">
-					<div class="single-story">
-						<div class="story-thumb">
-							<img class="img-fluid" src="{{ asset('assets/img/story/s2.jpg') }}" alt="">
-						</div>
-						<div class="story-details">
-							<div class="story-meta">
-								<a href="#">
-									<span class="lnr lnr-calendar-full"></span>
-									20th Sep, 2018
-								</a>
-								<a href="#">
-									<span class="lnr lnr-book"></span>
-									Company
-								</a>
-							</div>
-							<h5>
-								<a href="#">
-									Apple resorts to promo deals 
-									trade to boost 
-								</a>
-							</h5>
-						</div>
-					</div>
-				</div>
-
-				<!-- single-story -->
-				<div class="col-lg-4 col-md-6">
-					<div class="single-story">
-						<div class="story-thumb">
-							<img class="img-fluid" src="{{ asset('assets/img/story/s3.jpg') }}" alt="">
-						</div>
-						<div class="story-details">
-							<div class="story-meta">
-								<a href="#">
-									<span class="lnr lnr-calendar-full"></span>
-									20th Sep, 2018
-								</a>
-								<a href="#">
-									<span class="lnr lnr-book"></span>
-									Company
-								</a>
-							</div>
-							<h5>
-								<a href="#">
-									Lime recalls electric scooters over 
-									battery fire.
-								</a>
-							</h5>
-						</div>
-					</div>
-				</div>
+				@endforeach
 			</div>
 		</div>
 	</section>

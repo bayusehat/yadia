@@ -21,6 +21,7 @@
 
   <!-- Custom styles for this template-->
   <link href="{{ asset('assets/admin/css/sb-admin.css') }}" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
 
   <script src="{{ asset('assets/admin/vendor/jquery/jquery.min.js') }}"></script>
   <script src="{{ asset('assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -33,9 +34,18 @@
   <script src="{{ asset('assets/admin/vendor/datatables/jquery.dataTables.js') }}"></script>
   <script src="{{ asset('assets/admin/vendor/datatables/dataTables.bootstrap4.js') }}"></script>
   <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
   <script>
-    tinymce.init({
-      selector: 'textarea'
+    $(document).ready(function() {
+      tinymce.init({
+        selector: 'textarea'
+      });
+
+      $('.select2').select2();
+      
+      $('.tags').select2({
+        tags : true
+      });
     });
   </script>
   <style>

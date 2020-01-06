@@ -17,12 +17,27 @@
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 		<link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 		<link rel="stylesheet" href="{{ asset('assets/css/gallery.css') }}">
+		<link rel="stylesheet" href="{{ asset('lightgallery/src/css/lightgallery.css') }}" /> 
          
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="{{ asset('assets/js/jquery-3.2.1.min.js') }}"></script>
         <script src="{{ asset('assets/js/popper.js') }}"></script>
 		<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+		<!-- A jQuery plugin that adds cross-browser mouse wheel support. (Optional) -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+		<script src="{{ asset('lightgallery/dist/js/lightgallery.min.js') }}"></script>
+		<script src="{{ asset('lightgallery/modules/lg-thumbnail.min.js') }}"></script>
+		<script src="{{ asset('lightgallery/modules/lg-fullscreen.min.js') }}"></script>
+		<script>
+			$(document).ready(function(){
+				$('#thumbnails').lightGallery({
+					thumbnail:true,
+					animateThumb: false,
+					showThumbByDefault: false
+				}); 
+			})
+		</script>
 		<style>
 			@media (max-width: 1199px){
 			.donasi_area .donasi_right {

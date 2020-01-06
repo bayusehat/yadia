@@ -22,10 +22,10 @@
         <div class="row">
             <div class="col-lg-4 col-md-6">
                 <div class="single_causes">
-                    <h4>Menggalang Donasi</h4>
+                    <h4>Menggalang Dana</h4>
                     <img src="{{ asset('assets/img/causes/c1.png') }}" alt="">
                     <p>
-                        It you're. Was called you're fowl grass lesser land together waters beast darkness earth land whose male all moveth fruitful.
+                        Menggalang dana untuk mereka yang mebutuhkan
                     </p>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                     <h4>Memberikan Inspirasi</h4>
                     <img src="{{ asset('assets/img/causes/c2.png') }}" alt="">
                     <p>
-                        It you're. Was called you're fowl grass lesser land together waters beast darkness earth land whose male all moveth fruitful.
+                        Memberikan inspirasi bagi semua agar selalu termotivasi dan semangat dalam menajalani hidup
                     </p>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                     <h4>Menjadi Donatur</h4>
                     <img src="{{ asset('assets/img/causes/c3.png') }}" alt="">
                     <p>
-                        It you're. Was called you're fowl grass lesser land together waters beast darkness earth land whose male all moveth fruitful.
+                        Menjadi donatur untuk kemanusiaan
                     </p>
                 </div>
             </div>
