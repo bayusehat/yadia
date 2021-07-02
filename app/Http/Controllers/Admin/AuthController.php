@@ -56,6 +56,19 @@ class AuthController extends Controller
        }
     }
 
+    public function insertAdmin()
+    {
+        $data = [
+            'adminName' => 'Admin',
+            'adminUsername' => 'admin',
+            'adminPassword' => Hash::make('admin'),
+            'roleId' => 1,
+            'adminLastLogin' => date('Y-m-d H:i:s')
+        ];
+
+        Admin::insert($data);
+    }
+
     public function doLogout()
     {
         $updateLastLogin = Admin::where('adminId',session('adminId'))->update([

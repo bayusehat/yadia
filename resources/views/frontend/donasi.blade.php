@@ -41,7 +41,7 @@
 <!--================ End About Us Area =================-->
 
 <!--================Team Area =================-->
-<section class="team_area section_gap">
+{{-- <section class="team_area section_gap">
     <div class="container">
         <div class="main_title">
             <h2>Meet our voluteer</h2>
@@ -133,7 +133,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!--================End Team Area =================-->
 
 <!--================ Start CTA Area =================-->

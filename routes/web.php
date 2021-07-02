@@ -18,6 +18,8 @@ Route::get('/galeri','GalleryController@index');
 Route::get('/donasi','LaporanController@index');
 Route::get('/kontak','KontakController@index');
 
+Route::get('/insert_admin','Admin\AuthController@insertAdmin');
+
 
 //Admin
 Route::group(['prefix' => 'admin'], function () {
